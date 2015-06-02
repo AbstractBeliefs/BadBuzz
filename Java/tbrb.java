@@ -42,7 +42,7 @@ public class tbrb {
 	}
 
 	private static void omgwhatmultipliesbythreeandfive(int max) {
-		for (int i=loopStart; i<maxNum; i++) {
+		for (int i=loopStart; i<=maxNum; i++) {
 			if (i%3==0 && i%5==0) {
 				MULTIPLEBOTH.put(i, true);
 			} else {
@@ -52,7 +52,7 @@ public class tbrb {
 	}
 	
 	private static void plsGETmyMultiplesOfFive() {
-		for (int i=0; i<maxNum; i++) {
+		for (int i=0; i<=maxNum; i++) {
 			StringBuilder numBuilder = new StringBuilder();
 			numBuilder.append(i);
 			String number = numBuilder.toString();
@@ -68,7 +68,7 @@ public class tbrb {
 	}
 	
 	public static void WORKOUTMULTIPLESTHREE(int begin) {
-		for (int i=begin; i < maxNum; i++) {
+		for (int i=begin; i <= maxNum; i++) {
 			if (i%3==0) {
 				MULTIPLETHREE.put(i, 1);
 			} else {
