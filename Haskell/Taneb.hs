@@ -4,7 +4,6 @@ module FizzBuzz2 where
 import Prelude hiding (pred, Num)
 import Unsafe.Coerce
 
-
 type Num = forall a. (a -> a) -> a -> a
 
 fix :: ((Num -> a -> a -> a) -> Num -> a -> a -> a) -> Num -> a -> a -> a
