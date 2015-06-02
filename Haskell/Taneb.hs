@@ -2,14 +2,16 @@
 module FizzBuzz2 where
 
 import Prelude hiding (pred, Num)
+import Unsafe.Coerce
+
 
 type Num = forall a. (a -> a) -> a -> a
 
 fix :: ((Num -> a -> a -> a) -> Num -> a -> a -> a) -> Num -> a -> a -> a
-fix f = f (fix f)
+fix f = (\x -> f (unsafeCoerce x x)) (\x -> f (unsafeCoerce x x))
 
 fixx :: ((Num -> Num -> (s -> n -> n) -> n -> (a -> s) -> (a -> a) -> a -> s -> s -> s -> n) -> Num -> Num -> (s -> n -> n) -> n -> (a -> s) -> (a -> a) -> a -> s -> s -> s -> n) -> Num -> Num -> (s -> n -> n) -> n -> (a -> s) -> (a -> a) -> a -> s -> s -> s -> n
-fixx f = f (fixx f)
+fixx = (\x y -> unsafeCoerce x y x) (\y x -> y (unsafeCoerce x y x))
 
 pred :: Num -> Num
 pred n f x = n (\g h -> h (g f)) (const x) id
