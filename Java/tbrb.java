@@ -14,15 +14,14 @@ public class tbrb {
 	static final HashMap<Integer, Integer> MULTIPLETHREE = new HashMap<Integer, Integer>();
 	
 	public static void watDo(int whereWeAt) {
-		if ((Boolean) MULTIPLEBOTH.get(whereWeAt) == true) {
+		if ((Boolean) MULTIPLEBOTH.get(whereWeAt) == true)
 			print(FIZZBUZZ);
-		} else if ((String) MULTIPLEFIVE.get(whereWeAt) == "Yes") {
+		else if ((String) MULTIPLEFIVE.get(whereWeAt) == "Yes") {
 			print(BUZZ);
 		} else if ((Integer) MULTIPLETHREE.get(whereWeAt) == 1) {
 			print(FIZZ);
-		} else {
+		} else
 			print(String.valueOf(whereWeAt));
-		}
 	}
 	
 	public static void print(String printme) {
@@ -37,13 +36,13 @@ public class tbrb {
 	}
 	
 	public static void perform_loop(int max) {
-		for (int i=loopStart; i <= max; i++) {
+		for (int i=loopStart; i < max; i++) {
 			watDo(i);
 		}
 	}
 
 	private static void omgwhatmultipliesbythreeandfive(int max) {
-		for (int i=loopStart; i<=maxNum; i++) {
+		for (int i=loopStart; i<maxNum; i++) {
 			if (i%3==0 && i%5==0) {
 				MULTIPLEBOTH.put(i, true);
 			} else {
@@ -53,7 +52,7 @@ public class tbrb {
 	}
 	
 	private static void plsGETmyMultiplesOfFive() {
-		for (int i=0; i<=maxNum; i++) {
+		for (int i=0; i<maxNum; i++) {
 			StringBuilder numBuilder = new StringBuilder();
 			numBuilder.append(i);
 			String number = numBuilder.toString();
@@ -69,7 +68,7 @@ public class tbrb {
 	}
 	
 	public static void WORKOUTMULTIPLESTHREE(int begin) {
-		for (int i=begin; i <= maxNum; i++) {
+		for (int i=begin; i < maxNum; i++) {
 			if (i%3==0) {
 				MULTIPLETHREE.put(i, 1);
 			} else {
