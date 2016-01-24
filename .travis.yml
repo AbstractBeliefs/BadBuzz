@@ -1,0 +1,8 @@
+addons:
+    apt:
+        packages:
+            - make
+            - python
+
+script:
+    - make
