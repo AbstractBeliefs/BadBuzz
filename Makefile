@@ -1,4 +1,4 @@
 DIRECTORIES = Python
 
 test:
-	$(foreach dir, $(DIRECTORIES), $(MAKE) -C $(dir))
+	$(foreach dir, $(DIRECTORIES), echo "Testing $(dir)"; $(MAKE) -C $(dir);)

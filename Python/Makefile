@@ -1,4 +1,4 @@
 FILES = $(wildcard *.py)
 
 test:
-	$(foreach testable, $(FILES), python $(testable) | diff - ../fizzbuzz.txt)
+	$(foreach testable, $(FILES), echo "Testing $(testable)"; python $(testable) | diff - ../fizzbuzz.txt;)
