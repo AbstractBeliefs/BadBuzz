@@ -1,3 +1,5 @@
+#! /usr/bin/env python2
+
 def fizzbuzz(foo):
     t = xrange(0, foo+1, 3) #xrange to increase performance
     f = xrange(0, foo+1, 5)
