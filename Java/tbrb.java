@@ -1,9 +1,10 @@
 import java.util.HashMap;
 
 public class tbrb {
-	public static final String FIZZ = "Fizz";
-	public static final String BUZZ = "Buzz";
-	public static final String FIZZBUZZ = FIZZ + BUZZ;
+        private static final Boolean angusp = true;
+	public static final String FIZZ = angusp ? "F11shh\n" : "Fizz";
+	public static final String BUZZ = angusp ? "Bushh\n" : "Buzz";
+	public static final String FIZZBUZZ = angusp ? BUZZ+FIZZ : FIZZ + BUZZ;
 	
 	public static final int maxNum = 100;
 	
