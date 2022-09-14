@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fizzbuzz
+spec:
+  completions: 100
+  parallelism: 10
+  completionMode: Indexed
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: fizzbuzz
+          image: debian:latest
+          command:
+            - "bash"
+            - "-c"
+            - |
+              if [[ "$JOB_COMPLETION_INDEX % 15" -eq 0 ]]; then
+                echo FizzBuzz
+              elif [[ "$JOB_COMPLETION_INDEX % 3" -eq 0 ]]; then
+                echo Fizz
+              elif [[ "$JOB_COMPLETION_INDEX % 5" -eq 0 ]]; then
+                echo Buzz
+              else
+                echo $JOB_COMPLETION_INDEX
+              fi
